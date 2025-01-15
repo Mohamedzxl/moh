@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشروع مدرسي</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 10px;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .info {
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            max-width: 600px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, p {
+            margin: 10px 0;
+        }
+        .student-name {
+            color: #d9534f; /* أحمر */
+            font-weight: bold;
+        }
+        .teacher-name {
+            color: #5bc0de; /* أزرق فاتح */
+            font-weight: bold;
+        }
+        .school-name {
+            color: #5cb85c; /* أخضر */
+            font-weight: bold;
+        }
+        .header-name {
+            color: white; /* أبيض */
+            font-weight: bold;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .image-page {
+            display: none; /* نخفي صفحة الصورة مبدئيًا */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 50px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        /* تأثيرات تغيير اللون */
+        .red-theme {
+            background-color: #d9534f;
+        }
+
+        .yellow-theme {
+            background-color: #f0ad4e;
+        }
+
+        .dark-theme {
+            background-color: #333;
+            color: black; /* تغيير الخط الرئيسي إلى الأسود */
+        }
+
+        /* الألوان في الوضع الداكن تبقى كما هي */
+        .dark-theme .student-name,
+        .dark-theme .teacher-name,
+        .dark-theme .school-name {
+            color: black; /* تغيير لون النصوص إلى الأسود في الوضع الداكن */
+        }
+
+        .dark-theme h1, 
+        .dark-theme h2, 
+        .dark-theme p {
+            color: black; /* تغيير النصوص الأخرى إلى اللون الأسود */
+        }
+
+        /* إضافة تأثير للزر عند المرور عليه */
+        .color-picker {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .color-picker:hover {
+            background-color: #218838;
+        }
+
+        /* قائمة الألوان التي تظهر عند الضغط على الزر */
+        .color-options {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .color-options button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .color-options .red-btn {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        .color-options .yellow-btn {
+            background-color: #f0ad4e;
+            color: white;
+        }
+
+        .color-options .dark-btn {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>مشروع مدرسي</h1>
+    <p>إعداد: <span class="header-name">محمد عمرو</span></p>
+</header>
+
+<main id="main-content">
+    <div class="info">
+        <h2>معلومات المشروع</h2>
+        <p><strong>اسم الطالب:</strong> <span class="student-name">محمد عمرو</span></p>
+        <p><strong>اسم أستاذ المادة:</strong> <span class="teacher-name">حسام الجهني</span></p>
+        <p><strong>اسم المدرسة:</strong> <span class="school-name">مدرسة القصواء</span></p>
+    </div>
+    <button class="btn" onclick="showImagePage()">عرض شعار المدرسة</button>
+    <!-- زر تغيير اللون -->
+    <button class="color-picker" onclick="toggleColorOptions()">اختيار اللون</button>
+    <!-- قائمة الألوان -->
+    <div class="color-options" id="color-options">
+        <button class="red-btn" onclick="changeColor('red')">أحمر</button>
+        <button class="yellow-btn" onclick="changeColor('yellow')">أصفر</button>
+        <button class="dark-btn" onclick="changeColor('dark')">داكن</button>
+    </div>
+</main>
+
+<!-- صفحة الصورة -->
+<div id="image-page" class="image-page">
+    <header>
+        <h1>شعار المدرسة</h1>
+    </header>
+    <main>
+        <img src="download.jpg" alt="شعار مدرسة القصواء">
+        <button class="btn" onclick="goBack()">العودة</button>
+    </main>
+    <footer>
+        <p>&copy; 2025 - 1446</p>
+    </footer>
+</div>
+
+<footer>
+    <p>&copy; 2025 - 1446</p>
+</footer>
+
+<script>
+    function showImagePage() {
+        // إخفاء المحتوى الأساسي
+        document.getElementById('main-content').style.display = 'none';
+        
+        // إظهار صفحة الصورة
+        document.getElementById('image-page').style.display = 'block';
+    }
+
+    function goBack() {
+        // العودة إلى الصفحة الرئيسية
+        document.getElementById('main-content').style.display = 'block';
+        document.getElementById('image-page').style.display = 'none';
+    }
+
+    function changeColor(color) {
+        // إزالة جميع الألوان السابقة
+        document.body.classList.remove('red-theme', 'yellow-theme', 'dark-theme');
+
+        // إضافة اللون الجديد
+        if (color === 'red') {
+            document.body.classList.add('red-theme');
+        } else if (color === 'yellow') {
+            document.body.classList.add('yellow-theme');
+        } else if (color === 'dark') {
+            document.body.classList.add('dark-theme');
+        }
+
+        // إغلاق قائمة الألوان بعد اختيار اللون
+        document.getElementById('color-options').style.display = 'none';
+    }
+
+    function toggleColorOptions() {
+        const options = document.getElementById('color-options');
+        options.style.display = options.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
