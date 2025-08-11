@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>شركة عمرو للسياحة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+      background: #fafafa;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #bfa52d;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+    }
+
+    p.subtitle {
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+
+    .packages-container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+      max-width: 900px;
+      width: 100%;
+      padding: 30px;
+      display: flex;
+      justify-content: space-around;
+      gap: 25px;
+      transition: transform 0.4s ease;
+    }
+
+    .package {
+      flex: 1;
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 25px 20px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .package:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .package h3 {
+      color: #bfa52d;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1.2px;
+    }
+
+    .package p {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-bottom: 25px;
+      min-height: 70px;
+    }
+
+    .package button {
+      background: #bfa52d;
+      border: none;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .package button:hover {
+      background: #9e8930;
+    }
+
+    /* Animation for fade-in */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .package {
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+    }
+    .package:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    .package:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    .package:nth-child(3) {
+      animation-delay: 0.5s;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .packages-container {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .package {
+        margin-bottom: 20px;
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>شركة عمرو للسياحة</h1>
+  <p class="subtitle">اختار باقة العمرة المناسبة لك بكل سهولة وراحة</p>
+
+  <div class="packages-container">
+    <div class="package" tabindex="0" role="button" aria-pressed="false" onclick="choosePackage('باقة مكة فقط')" onkeypress="if(event.key === 'Enter') choosePackage('باقة مكة فقط')">
+      <h3>باقة مكة فقط</h3>
+      <p>5 أيام إقامة قريبة من الحرم + نقل VIP</p>
+      <button type="button">اختيار</button>
+    </div>
+    <div class="package" tabindex="0" role="button" aria-pressed="false" onclick="choosePackage('باقة مكة والمدينة')" onkeypress="if(event.key === 'Enter') choosePackage('باقة مكة والمدينة')">
+      <h3>باقة مكة والمدينة</h3>
+      <p>10 أيام بين مكة والمدينة مع زيارات دينية مميزة</p>
+      <button type="button">اختيار</button>
+    </div>
+    <div class="package" tabindex="0" role="button" aria-pressed="false" onclick="choosePackage('باقة VIP')" onkeypress="if(event.key === 'Enter') choosePackage('باقة VIP')">
+      <h3>باقة VIP</h3>
+      <p>إقامة 5 نجوم، تنقل خاص، مرافق شخصي</p>
+      <button type="button">اختيار</button>
+    </div>
+  </div>
+
+  <script>
+    function choosePackage(name) {
+      alert('✅ لقد اخترت: ' + name);
+    }
+  </script>
+
+</body>
+</html>
