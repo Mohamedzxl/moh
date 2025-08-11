@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>عمرو للسياحة | رحلات عمرة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url('https://upload.wikimedia.org/wikipedia/commons/1/16/Kaaba_Masjid_Al-Haram_Makkah.jpg') center/cover no-repeat;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: gold;
+    }
+
+    header p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: gold;
+      color: black;
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #bfa52d;
+    }
+
+    nav {
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #d4af37;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      color: #d4af37;
+      margin-bottom: 20px;
+    }
+
+    .about, .packages, .booking, .contact {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header>
+    <h1>عمرو للسياحة</h1>
+    <p>نأخذك في رحلة روحانية إلى مكة والمدينة المنورة</p>
+    <a class="btn" href="#booking">احجز الآن</a>
+  </header>
+
+  <!-- القائمة -->
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#about">من نحن</a>
+    <a href="#packages">الرحلات</a>
+    <a href="#booking">احجز الآن</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+
+  <!-- من نحن -->
+  <section id="about" class="about">
+    <h2>من نحن</h2>
+    <p>شركة عمرو للسياحة مرخصة لتنظيم رحلات العمرة، نوفر لكم أفضل الخدمات من الإقامة، التنقل، والمرافقة الروحية من لحظة انطلاقكم حتى العودة.</p>
+  </section>
+
+  <!-- الباقات -->
+  <section id="packages" class="packages">
+    <h2>باقات العمرة</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=مكة+فقط" alt="مكة فقط">
+        <h3>باقة مكة فقط</h3>
+        <p>5 أيام إقامة قريبة من الحرم المكي + نقل VIP</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=مكة+والمدينة" alt="مكة والمدينة">
+        <h3>مكة والمدينة</h3>
+        <p>10 أيام بين مكة والمدينة مع زيارات ومعالم دينية</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=باقة+VIP" alt="باقة VIP">
+        <h3>باقة VIP</h3>
+        <p>خدمة خاصة، إقامة 5 نجوم، تنقل خاص، مرافق شخصي</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- الحجز -->
+  <section id="booking" class="booking">
+    <h2>احجز رحلتك الآن</h2>
+    <p>املأ النموذج وسنتواصل معك في أقرب وقت.</p>
+    <form>
+      <input type="text" placeholder="الاسم الكامل" required style="padding:10px; margin:5px; width:250px;"><br>
+      <input type="tel" placeholder="رقم الهاتف" required style="padding:10px; margin:5px; width:250px;"><br>
+      <input type="email" placeholder="البريد الإلكتروني" required style="padding:10px; margin:5px; width:250px;"><br>
+      <select required style="padding:10px; margin:5px; width:260px;">
+        <option>اختر الباقة</option>
+        <option>مكة فقط</option>
+        <option>مكة والمدينة</option>
+        <option>VIP</option>
+      </select><br>
+      <button class="btn" type="submit">إرسال الحجز</button>
+    </form>
+  </section>
+
+  <!-- تواصل معنا -->
+  <section id="contact" class="contact">
+    <h2>تواصل معنا</h2>
+    <p>📞 1234-567-890 | ✉️ info@amrotours.com</p>
+    <p>العنوان: القاهرة، مصر | واتساب متاح 24/7</p>
+  </section>
+
+  <!-- التذييل -->
+  <footer>
+    &copy; 2025 عمرو للسياحة – جميع الحقوق محفوظة
+  </footer>
+
+</body>
+</html>
